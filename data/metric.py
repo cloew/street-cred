@@ -6,3 +6,8 @@ class Metric:
         """ Initialize with the name and description """
         self.name = name
         self.description = description
+
+    def __repr__(self):
+        """ Return the String Representation of the Metric """
+        return "<Metric({}, {})>".format(self.name, self.description)
+        
