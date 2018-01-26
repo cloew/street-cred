@@ -1,4 +1,4 @@
-from .metric_score import MetricScore
+from .metric_calculator import MetricCalculator
 from .street_credit_score import StreetCreditScore
 
 from data import MetricsFactory
@@ -9,9 +9,10 @@ class StreetCreditScoreCalculator:
     def calculate(self):
         """ Return the Street Credit Score """
         metrics = MetricsFactory.loadAll()
+        metricCalculator = MetricCalculator()
         scores = []
         for metric in metrics:
-            metric_score = MetricScore(metric=metric, score=200)
+            metric_score = metricCalculator.calculate(metric)
             scores.append(metric_score)
         return StreetCreditScore(scores)
         
