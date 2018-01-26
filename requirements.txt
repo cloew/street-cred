@@ -3,4 +3,5 @@ future==0.16.0
 git+git://github.com/cloew/KaoDecorators.git
 git+git://github.com/cloew/KaoFactory.git
 git+git://github.com/cloew/KaoFlask.git
+git+git://github.com/cloew/proxy-attrs.git
 cached-property==1.3.0
