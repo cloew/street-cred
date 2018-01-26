@@ -19,10 +19,14 @@ class StreetCreditScoreCalculator:
             scores.append(metric_score)
         
         total_score = StreetCreditScore(scores)
+        self.apply_pity_metric_if_necessary(total_score)
+        return total_score
+        
+    def apply_pity_metric_if_necessary(self, total_score):
+        """ Apply the Pity Score if necessary """
         if total_score.score < self.MIN_SCORE:
             pity_metric_score = self.get_pity_metric_score(total_score.score)
             total_score.add_score(pity_metric_score)
-        return total_score
         
     @cached_property
     def being_alive_metric_score(self):
