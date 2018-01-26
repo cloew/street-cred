@@ -11,3 +11,7 @@ class StreetCreditScore:
         """ Return the total Street Credit Score """
         return sum(metric_score.score for metric_score in self.metric_scores)
         
+    def add_score(self, metric_score):
+        """ Add the given score to the list of Scores """
+        self.metric_scores.append(metric_score)
+        
