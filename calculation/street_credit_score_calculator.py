@@ -1,4 +1,3 @@
-from .metric_calculator import MetricCalculator
 from .metric_score import MetricScore
 from .street_credit_score import StreetCreditScore
 
@@ -13,10 +12,10 @@ class StreetCreditScoreCalculator:
     def calculate(self):
         """ Return the Street Credit Score """
         metrics = MetricsFactory.loadAll()
-        metric_calculator = MetricCalculator()
+        
         scores = [self.being_alive_metric_score]
         for metric in metrics:
-            metric_score = metric_calculator.calculate(metric)
+            metric_score = MetricScore.from_metric(metric)
             scores.append(metric_score)
         
         total_score = StreetCreditScore(scores)
