@@ -14,3 +14,12 @@ class MetricScore:
         self.metric = metric
         self.scoreContext = scoreContext
         
+    @property
+    def name(self):
+        """ The name for this Metric """
+        return self.metric.name
+        
+    @property
+    def description(self):
+        """ The description for this Metric """
+        return self.metric.description
