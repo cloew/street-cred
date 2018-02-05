@@ -5,5 +5,4 @@ class ScoreContext:
     def __init__(self, score, **kwargs):
         """ Initialize with the Score and any keyword arguments that helped calculate that score """
         self.score = score
-        for key in kwargs:
-            setattr(self, key, kwargs[key])
+        self.data = kwargs

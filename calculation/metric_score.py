@@ -1,3 +1,4 @@
+from .metric_environment import MetricEnvironment
 from proxy_attrs import proxy_for
 
 @proxy_for('scoreContext', ['score'])
@@ -17,9 +18,9 @@ class MetricScore:
     @property
     def name(self):
         """ The name for this Metric """
-        return self.metric.name
+        return MetricEnvironment.render(self.metric.name, self.scoreContext)
         
     @property
     def description(self):
         """ The description for this Metric """
-        return self.metric.description
+        return MetricEnvironment.render(self.metric.description, self.scoreContext)
