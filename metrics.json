@@ -2,19 +2,21 @@
     "name": "Prefers exactly 49 slices of pepperoni on a pizza.", 
     "description": "The perfect amount! (Proven by SCIENCE!)",
     "calculator": {
+        "type":"IN RANGE",
         "high":200
     }
 }, {
     "name": "Uses Facebook.", 
     "description": "Seriously?! You know who uses Facebook? Your parents. And their parents. And Grumpy Cat!",
     "calculator": {
-        "low":-50,
-        "high":0
+        "type":"FIXED",
+        "score":-50
     }
 }, {
     "name": "Saved a baby from an alligator by punching it in the face.", 
     "description": "We're gonna level with you. We have no idea if this happened, but it sounded AWESOME!!! And everybody's talking about so we figured we'd give it to ya.",
     "calculator": {
+        "type":"IN RANGE",
         "high":300
     }
 }]
