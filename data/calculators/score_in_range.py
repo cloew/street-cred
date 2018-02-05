@@ -1,3 +1,5 @@
+from .score_context import ScoreContext
+
 import random
 
 class ScoreInRange:
@@ -10,4 +12,4 @@ class ScoreInRange:
         
     def calculate(self):
         """ Calculate the score """
-        return random.randint(self.low, self.high)
+        return ScoreContext(random.randint(self.low, self.high))

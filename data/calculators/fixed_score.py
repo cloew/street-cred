@@ -1,3 +1,4 @@
+from .score_context import ScoreContext
 
 class FixedScore:
     """ Helper class to calculate a Score that is fixed to a certain value """
@@ -8,4 +9,4 @@ class FixedScore:
         
     def calculate(self):
         """ Calculate the score """
-        return self.score
+        return ScoreContext(self.score)
