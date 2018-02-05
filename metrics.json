@@ -26,4 +26,13 @@
         "type":"PICK VALUE",
         "high":300
     }
+}, {
+    "name": "Switched Lanes without using a Turn Signal {{ value }} times in the last week.", 
+    "description": "How could you! Turn signals aren't like blind spots. They ARE for other drivers.",
+    "calculator": {
+        "type":"PICK VALUE",
+        "low": 1,
+        "high":100,
+        "score":"-value*2"
+    }
 }]

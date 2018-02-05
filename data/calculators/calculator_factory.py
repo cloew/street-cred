@@ -6,6 +6,6 @@ from kao_factory import Factory, FieldArg, TypedFactory
         
 CalculatorFactory = TypedFactory('type', {
     'FIXED':Factory(FixedScore, FieldArg("score")),
-    'PICK VALUE':Factory(PickValueCalculator, low=FieldArg("low"), high=FieldArg("high")),
+    'PICK VALUE':Factory(PickValueCalculator, low=FieldArg("low"), high=FieldArg("high"), score_expr=FieldArg("score")),
     'IN RANGE':Factory(ScoreInRange, low=FieldArg("low"), high=FieldArg("high")),
 })
