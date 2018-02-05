@@ -19,4 +19,11 @@
         "type":"IN RANGE",
         "high":300
     }
+}, {
+    "name": "'Street Experience'", 
+    "description": "You have visted exactly {{ value }} streets in your lifetime.",
+    "calculator": {
+        "type":"PICK VALUE",
+        "high":300
+    }
 }]
