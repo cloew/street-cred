@@ -1,7 +1,7 @@
-from data import MetricsFactory
+from data import Metric, MetricsFactory
 from calculation import MetricScore, StreetCreditScore, StreetCreditScoreCalculator
 
-from kao_json import JsonFactory, AsObj, ViaAttr
+from ..helpers import toJson
 
 class GetScore:
     """Controller to get a score"""
@@ -10,5 +10,4 @@ class GetScore:
         """ Calculate a score from avaliable metrics and return to user """
         score_calculator = StreetCreditScoreCalculator()
         calculated_score = score_calculator.calculate()
-        # print(calculated_score.metric_scores)
-        return(str(calculated_score.score))
+        return(str({'result':toJson(calculated_score)}))
