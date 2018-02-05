@@ -20,7 +20,7 @@
         "high":300
     }
 }, {
-    "name": "'Street Experience'", 
+    "name": "\"Street Experience\"", 
     "description": "You have visted exactly {{ value }} streets in your lifetime.",
     "calculator": {
         "type":"PICK VALUE",
