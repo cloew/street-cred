@@ -1,0 +1,15 @@
+<template>
+  <ul>
+    <li repeat.for="metricScore of metricScores">
+      ${metricScore.name}<br>
+      <ul>
+        <li>
+          <strong>Description:</strong> ${metricScore.description}
+        </li>
+        <li>
+          <strong>Score:</strong> ${metricScore.score}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</template>
