@@ -1,4 +1,4 @@
-from .calculators import ValueRange
+from .range import ValueRange
 import random
 
 class MetricGroup:

@@ -1,5 +1,5 @@
 from .score_context import ScoreContext
-from .value_range import ValueRange
+from ..range import ValueRange
 
 class ScoreInRange:
     """ Helper class to calculate a Score within a particular range """

@@ -1,5 +1,5 @@
 from .score_context import ScoreContext
-from .value_range import ValueRange
+from ..range import ValueRange
 
 from jinja2 import Environment
 
