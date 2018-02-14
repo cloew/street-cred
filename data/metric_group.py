@@ -1,11 +1,12 @@
+from .calculators import ValueRange
 import random
 
 class MetricGroup:
     """ Represents a Group metrics that can be selected from """
     
-    def __init__(self, metric_count_range, metrics):
+    def __init__(self, low, high, metrics):
         """ Initialize the Metric Group """
-        self.metric_count_range = metric_count_range
+        self.metric_count_range = ValueRange(low=low, high=high)
         self.metrics = metrics
         
     def pick_metrics(self):
