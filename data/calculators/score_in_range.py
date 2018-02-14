@@ -1,12 +1,11 @@
 from .score_context import ScoreContext
-from ..range import ValueRange
 
 class ScoreInRange:
     """ Helper class to calculate a Score within a particular range """
     
-    def __init__(self, *, high, low=0):
+    def __init__(self, range):
         """ Initialize with the low and high thresholds """
-        self.range = ValueRange(low=low, high=high)
+        self.range = range
         
     def calculate(self):
         """ Calculate the score """
