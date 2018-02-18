@@ -12,7 +12,7 @@ class StreetCreditScoreCalculator:
         
     def calculate(self):
         """ Return the Street Credit Score """
-        metrics = MetricsFactory.loadAll()
+        metrics = self.pick_metrics()
         
         scores = [self.being_alive_metric_score]
         for metric in metrics:
@@ -22,6 +22,17 @@ class StreetCreditScoreCalculator:
         total_score = StreetCreditScore(scores)
         self.apply_pity_metric_if_necessary(total_score)
         return total_score
+        
+    def pick_metrics(self):
+        """ Return the Metrics that should be calculated """
+        metricGroups = MetricsFactory.loadAll()
+        metrics = []
+        
+        for group in metricGroups:
+            metrics += group.pick_metrics()
+        
+        return metrics
+        
         
     def apply_pity_metric_if_necessary(self, total_score):
         """ Apply the Pity Score if necessary """
