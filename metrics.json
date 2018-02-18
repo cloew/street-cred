@@ -1,4 +1,16 @@
 [{
+    "range":"1:1",
+    "metrics": [
+        {
+            "name": "Being alive.",
+            "description": "Congratulations on not being dead! This entitles you to 300 Street Cred!",
+            "calculator": {
+                "type":"FIXED",
+                "score":300
+            }
+        }
+    ]
+}, {
     "range":"0:2",
     "metrics": [
         {

@@ -14,7 +14,7 @@ class StreetCreditScoreCalculator:
         """ Return the Street Credit Score """
         metrics = self.pick_metrics()
         
-        scores = [self.being_alive_metric_score]
+        scores = []
         for metric in metrics:
             metric_score = MetricScore.from_metric(metric)
             scores.append(metric_score)
@@ -39,12 +39,6 @@ class StreetCreditScoreCalculator:
         if total_score.score < self.MIN_SCORE:
             pity_metric_score = self.get_pity_metric_score(total_score.score)
             total_score.add_score(pity_metric_score)
-        
-    @cached_property
-    def being_alive_metric_score(self):
-        """ Return the Being Alive Metric Score """
-        metric = Metric("Being alive.", "Congratulations on not being dead! This entitles you to 300 Street Cred!", calculator=None)
-        return MetricScore(metric, ScoreContext(self.MIN_SCORE))
         
     def get_pity_metric_score(self, current_score):
         """ Return the Pity Metric Score """
