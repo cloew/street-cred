@@ -7,7 +7,7 @@ export class App {
   constructor() {}
 
   configureRouter(config: RouterConfiguration, router: Router) {
-    config.title = 'Contacts';
+    config.title = 'StreetCred';
     config.map([
       { route: '',      moduleId: 'pre-calculation',   title: 'Welcome to StreetCred'},
       { route: 'score', moduleId: 'score-detail', name:'score' }

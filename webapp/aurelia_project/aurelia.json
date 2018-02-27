@@ -8,11 +8,10 @@
   "build": {
     "targets": [
       {
-        "id": "web",
-        "displayName": "Web",
-        "index": "index.html",
-        "baseDir": ".",
-        "output": "scripts"
+        "index": "../server/templates/index.html",
+        "baseDir": "../server",
+        "baseUrl": "static/scripts",
+        "output": "../server/static/scripts"
       }
     ],
     "options": {
@@ -101,11 +100,10 @@
     }
   },
   "platform": {
-    "id": "web",
-    "displayName": "Web",
-    "index": "index.html",
-    "baseDir": ".",
-    "output": "scripts"
+    "index": "../server/templates/index.html",
+    "baseDir": "../server",
+    "baseUrl": "static/scripts",
+    "output": "../server/static/scripts"
   },
   "transpiler": {
     "id": "typescript",

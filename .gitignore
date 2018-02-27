@@ -102,3 +102,6 @@ ENV/
 
 # PBF
 .pbf-properties
+
+# Aurelia
+scripts
