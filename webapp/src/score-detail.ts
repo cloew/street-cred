@@ -6,26 +6,32 @@ interface MetricScore {
   score: number;
 }
 
-let metricScoreFoo = {name: "foo_name", description: "foo_desc", score: 123};
-let metricScoreBar = {name: "bar_name", description: "bar_desc", score: 456};
-let metricScoreBaz = {name: "baz_name", description: "baz_desc", score: 789};
-
 let client = new HttpClient();
 
-/*
 client.configure(config => {
   config
+    .withBaseUrl('api/')
     .withDefaults({
-      credentials: 'include',
+      credentials: 'same-origin',
       headers: {
         'Accept': 'application/json',
-        'X-Requested-With/#/score': 'Fetch'
+        'X-Requested-With': 'Fetch'
       }
     });
 });
-*/
 
 export class ScoreDetail {
-  metricScores: MetricScore[] = [metricScoreFoo, metricScoreBar, metricScoreBaz];
-  singleMetric = metricScoreFoo;
+  metricScores: MetricScore[] = [];
+  totalScore: number;
+
+  activate() {
+    return client.fetch('score')
+      .then(response => response.json())
+      .then(data => {
+        data.result.metric_scores.forEach(element => {
+          this.metricScores.push(element);
+        });
+        this.totalScore = data.result.score;
+      });
+  };
 }

@@ -3,6 +3,8 @@ from calculation import MetricScore, StreetCreditScore, StreetCreditScoreCalcula
 
 from ..helpers import toJson
 
+import json
+
 class GetScore:
     """Controller to get a score"""
 
@@ -10,4 +12,4 @@ class GetScore:
         """ Calculate a score from avaliable metrics and return to user """
         score_calculator = StreetCreditScoreCalculator()
         calculated_score = score_calculator.calculate()
-        return(str({'result':toJson(calculated_score)}))
+        return(json.dumps({"result":toJson(calculated_score)}))

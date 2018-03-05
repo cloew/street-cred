@@ -1,4 +1,5 @@
 <template>
+  <center><strong>Your Score: <span value.bind="totalScore">${totalScore}</span></strong></center>
   <ul>
     <li repeat.for="metricScore of metricScores">
       ${metricScore.name}<br>
