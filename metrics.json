@@ -1,38 +1,66 @@
 [{
-    "name": "Prefers exactly 49 slices of pepperoni on a pizza.", 
-    "description": "The perfect amount! (Proven by SCIENCE!)",
-    "calculator": {
-        "type":"IN RANGE",
-        "high":200
-    }
+    "range":"1:1",
+    "metrics": [
+        {
+            "name": "Being alive.",
+            "description": "Congratulations on not being dead! This entitles you to 300 Street Cred!",
+            "calculator": {
+                "type":"FIXED",
+                "score":300
+            }
+        }
+    ]
 }, {
-    "name": "Uses Facebook.", 
-    "description": "Seriously?! You know who uses Facebook? Your parents. And their parents. And Grumpy Cat!",
-    "calculator": {
-        "type":"FIXED",
-        "score":-50
-    }
+    "range":"0:2",
+    "metrics": [
+        {
+            "name": "Prefers exactly 49 slices of pepperoni on a pizza.", 
+            "description": "The perfect amount! (Proven by SCIENCE!)",
+            "calculator": {
+                "type":"IN RANGE",
+                "range":"0:200"
+            }
+        },
+        {
+            "name": "Saved a baby from an alligator by punching it in the face.", 
+            "description": "We're gonna level with you. We have no idea if this happened, but it sounded AWESOME!!! And everybody's talking about so we figured we'd give it to ya.",
+            "calculator": {
+                "type":"IN RANGE",
+                "range":"0:300"
+            }
+        }
+    ]
 }, {
-    "name": "Saved a baby from an alligator by punching it in the face.", 
-    "description": "We're gonna level with you. We have no idea if this happened, but it sounded AWESOME!!! And everybody's talking about so we figured we'd give it to ya.",
-    "calculator": {
-        "type":"IN RANGE",
-        "high":300
-    }
+    "range":"0:2",
+    "metrics": [
+        {
+            "name": "Uses Facebook.", 
+            "description": "Seriously?! You know who uses Facebook? Your parents. And their parents. And Grumpy Cat!",
+            "calculator": {
+                "type":"FIXED",
+                "score":-50
+            }
+        },
+        {
+            "name": "Switched Lanes without using a Turn Signal {{ value }} times in the last week.", 
+            "description": "How could you! Turn signals aren't like blind spots. They ARE for other drivers.",
+            "calculator": {
+                "type":"PICK VALUE",
+                "range":"1:100",
+                "score":"-value*2"
+            }
+        }
+    ]
 }, {
-    "name": "\"Street Experience\"", 
-    "description": "You have visted exactly {{ value }} streets in your lifetime.",
-    "calculator": {
-        "type":"PICK VALUE",
-        "high":300
-    }
-}, {
-    "name": "Switched Lanes without using a Turn Signal {{ value }} times in the last week.", 
-    "description": "How could you! Turn signals aren't like blind spots. They ARE for other drivers.",
-    "calculator": {
-        "type":"PICK VALUE",
-        "low": 1,
-        "high":100,
-        "score":"-value*2"
-    }
+    "range": "1:1",
+    "metrics": [
+        {
+            "name": "\"Street Experience\"", 
+            "description": "You have visted exactly {{ value }} streets in your lifetime.",
+            "calculator": {
+                "type":"PICK VALUE",
+                "range":"0:300"
+            }
+        }
+    ]
 }]
