@@ -28,8 +28,10 @@ export class ScoreDetail {
     return client.fetch('score')
       .then(response => response.json())
       .then(data => {
-        data.result.metric_scores.forEach(element => {
-          this.metricScores.push(element);
+        data.result.category_scores.forEach(categoryScore => {
+          categoryScore.metric_scores.forEach(metricScore => {
+            this.metricScores.push(metricScore);
+          });
         });
         this.totalScore = data.result.score;
       });

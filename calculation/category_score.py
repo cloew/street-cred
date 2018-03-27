@@ -1,6 +1,6 @@
 from proxy_attrs import proxy_for
 
-@proxy_for('category', ['name'])
+@proxy_for('category', ['name', 'description'])
 class CategoryScore:
     """ Represents a person's calculated Street Credit Score in a particular Category """
     
