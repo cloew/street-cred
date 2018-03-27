@@ -2,16 +2,16 @@
 class StreetCreditScore:
     """ Represents a person's calculated Street Credit Score """
     
-    def __init__(self, metric_scores):
-        """ Initialize with the MetricScores """
-        self.metric_scores = metric_scores
+    def __init__(self, category_scores):
+        """ Initialize with the CategoryScores """
+        self.category_scores = category_scores
         
     @property
     def score(self):
         """ Return the total Street Credit Score """
-        return sum(metric_score.score for metric_score in self.metric_scores)
+        return sum(category_score.score for category_score in self.category_scores)
         
-    def add_score(self, metric_score):
+    def add_score(self, category_score):
         """ Add the given score to the list of Scores """
-        self.metric_scores.append(metric_score)
+        self.category_scores.append(category_score)
         
