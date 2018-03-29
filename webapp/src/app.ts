@@ -1,5 +1,6 @@
 import {Router, RouterConfiguration} from 'aurelia-router';
 import {inject} from 'aurelia-framework';
+import 'bootstrap';
 
 export class App {
   router: Router;

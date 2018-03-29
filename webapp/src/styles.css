@@ -1,0 +1,19 @@
+body {
+  background: Gray;
+}
+
+h1 {
+  color: DarkOrange;
+  background-color: DarkViolet;
+  padding: 15px;
+  text-align: center;
+  width: 50%;
+}
+
+#score-panel {
+  vertical-align: middle;
+  text-align: center;
+  background: DarkViolet;
+  color: DarkOrange;
+  font-size: 2em;
+}
