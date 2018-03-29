@@ -37,11 +37,6 @@ export class ScoreDetail {
       .then(response => response.json())
       .then(data => {
         this.categoryScores = data.result.category_scores;
-        data.result.category_scores.forEach(categoryScore => {
-          categoryScore.metric_scores.forEach(metricScore => {
-            this.metricScores.push(metricScore);
-          });
-        });
         this.totalScore = data.result.score;
       });
   };
