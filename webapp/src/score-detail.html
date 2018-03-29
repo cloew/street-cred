@@ -1,7 +1,7 @@
 <template>
 <div class="row">
-  <div class="col-md-4 col-sm-12" id="score-panel">
-    <center><strong>Your Score: <span value.bind="totalScore">${totalScore}</span></strong></center>
+  <div class="col-md-4 col-sm-12 text-center" id="score-panel">
+    <strong>Your Score: <span value.bind="totalScore">${totalScore}</span></strong>
   </div>
   <div id="accordion" class="col-md-8 col-sm-12">
     <div class="card"  repeat.for="metricScore of metricScores">
