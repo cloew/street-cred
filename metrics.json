@@ -1,46 +1,73 @@
 [{
-    "range":"1:1",
-    "metrics": [
-        {
-            "name": "Being alive.",
-            "description": "Congratulations on not being dead! This entitles you to 300 Street Cred!",
-            "calculator": {
-                "type":"FIXED",
-                "score":300
+    "name":"General",
+    "description":"",
+    "groups":[{
+        "range":"1:1",
+        "metrics": [
+            {
+                "name": "Being alive.",
+                "description": "Congratulations on not being dead! This entitles you to 300 Street Cred!",
+                "calculator": {
+                    "type":"FIXED",
+                    "score":300
+                }
             }
-        }
-    ]
+        ]
+    }]
 }, {
-    "range":"0:2",
-    "metrics": [
-        {
-            "name": "Prefers exactly 49 slices of pepperoni on a pizza.", 
-            "description": "The perfect amount! (Proven by SCIENCE!)",
-            "calculator": {
-                "type":"IN RANGE",
-                "range":"0:200"
+    "name":"Awesomeness",
+    "description":"Anything referring to the individual's general level of awesomeness. Sometimes referred to as coolness, badassery, etc.",
+    "groups":[{
+        "range":"0:2",
+        "metrics": [
+            {
+                "name": "Prefers exactly 49 slices of pepperoni on a pizza.", 
+                "description": "The perfect amount! (Proven by SCIENCE!)",
+                "calculator": {
+                    "type":"IN RANGE",
+                    "range":"0:200"
+                }
+            },
+            {
+                "name": "Saved a baby from an alligator by punching it in the face.", 
+                "description": "We're gonna level with you. We have no idea if this happened, but it sounded AWESOME!!! And everybody's talking about so we figured we'd give it to ya.",
+                "calculator": {
+                    "type":"IN RANGE",
+                    "range":"0:300"
+                }
             }
-        },
-        {
-            "name": "Saved a baby from an alligator by punching it in the face.", 
-            "description": "We're gonna level with you. We have no idea if this happened, but it sounded AWESOME!!! And everybody's talking about so we figured we'd give it to ya.",
-            "calculator": {
-                "type":"IN RANGE",
-                "range":"0:300"
+        ]
+    }, {
+        "range":"0:1",
+        "metrics": [
+            {
+                "name": "Uses Facebook.", 
+                "description": "Seriously?! You know who uses Facebook? Your parents. And their parents. And Grumpy Cat!",
+                "calculator": {
+                    "type":"FIXED",
+                    "score":-50
+                }
             }
-        }
-    ]
+        ]
+    }]
 }, {
-    "range":"0:2",
-    "metrics": [
-        {
-            "name": "Uses Facebook.", 
-            "description": "Seriously?! You know who uses Facebook? Your parents. And their parents. And Grumpy Cat!",
-            "calculator": {
-                "type":"FIXED",
-                "score":-50
+    "name":"Expeditiousness",
+    "description":"The individual's experience with exploring the world.",
+    "groups":[{
+        "range": "1:1",
+        "metrics": [
+            {
+                "name": "\"Street Experience\"", 
+                "description": "You have visted exactly {{ value }} streets in your lifetime.",
+                "calculator": {
+                    "type":"PICK VALUE",
+                    "range":"0:300"
+                }
             }
-        },
+        ]
+    }, {
+    "range":"0:1",
+    "metrics": [
         {
             "name": "Switched Lanes without using a Turn Signal {{ value }} times in the last week.", 
             "description": "How could you! Turn signals aren't like blind spots. They ARE for other drivers.",
@@ -51,16 +78,5 @@
             }
         }
     ]
-}, {
-    "range": "1:1",
-    "metrics": [
-        {
-            "name": "\"Street Experience\"", 
-            "description": "You have visted exactly {{ value }} streets in your lifetime.",
-            "calculator": {
-                "type":"PICK VALUE",
-                "range":"0:300"
-            }
-        }
-    ]
+}]
 }]

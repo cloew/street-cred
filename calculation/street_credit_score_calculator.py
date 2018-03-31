@@ -25,11 +25,11 @@ class StreetCreditScoreCalculator:
         
     def pick_metrics(self):
         """ Return the Metrics that should be calculated """
-        metricGroups = MetricsFactory.loadAll()
+        categories = MetricsFactory.loadAll()
         metrics = []
-        
-        for group in metricGroups:
-            metrics += group.pick_metrics()
+        for category in categories:
+            for group in category.metric_groups:
+                metrics += group.pick_metrics()
         
         return metrics
         
