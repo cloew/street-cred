@@ -1,21 +1,42 @@
 <template>
 <div class="row">
-  <div class="col-md-4 col-sm-12" id="score-panel">
-    <center><strong>Your Score: <span value.bind="totalScore">${totalScore}</span></strong></center>
+  <div class="col-md-4 col-sm-12 text-center" id="score-panel">
+    <strong>Your Score: <span value.bind="totalScore">${totalScore}</span></strong>
   </div>
-  <div id="accordion" class="col-md-8 col-sm-12">
-    <div class="card"  repeat.for="metricScore of metricScores">
-      <div class="card-header" id="heading${$index}">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse${$index}" aria-expanded="false" aria-controls="collapse${$index}">
-            ${metricScore.name} ${metricScore.score}
-          </button>
-        </h5>
-      </div>
+  <div id="category-accordion" class="col-md-8 col-sm-12">
+    <div class="card" repeat.for="categoryScore of categoryScores">
+        <div class="card-header" id="heading-category${$index}">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-category${$index}" aria-expanded="false" aria-controls="collapse-category${$index}">
+              ${categoryScore.name} ${categoryScore.score}
+            </button>
+          </h5>
+        </div>
 
-      <div id="collapse${$index}" class="collapse" aria-labelledby="heading${$index}" data-parent="#accordion">
-        <div class="card-body">
-          ${metricScore.description}
+        <div id="collapse-category${$index}" class="collapse" aria-labelledby="heading-category${$index}" data-parent="#category-accordion">
+          <div class="card-body">
+            <div style="margin-bottom: 5px;" if.bind="categoryScore.description">
+              ${categoryScore.description}
+            </div>
+
+            <div id="metric-accordion-${$parent.$index}">
+              <div class="card"  repeat.for="metricScore of categoryScore.metric_scores">
+                <div class="card-header" id="heading-metric-${$parent.$index}-${$index}">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-metric-${$parent.$index}-${$index}" aria-expanded="false" aria-controls="collapse-metric-${$parent.$index}-${$index}">
+                      ${metricScore.name} ${metricScore.score}
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapse-metric-${$parent.$index}-${$index}" class="collapse" aria-labelledby="heading-metric-${$parent.$index}-${$index}" data-parent="#metric-accordion-${$parent.$index}">
+                  <div class="card-body">
+                    ${metricScore.description}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

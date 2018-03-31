@@ -6,6 +6,13 @@ interface MetricScore {
   score: number;
 }
 
+interface CategoryScore {
+  name: string;
+  description: string;
+  score: number;
+  metric_scores: MetricScore[];
+}
+
 let client = new HttpClient();
 
 client.configure(config => {
@@ -21,6 +28,7 @@ client.configure(config => {
 });
 
 export class ScoreDetail {
+  categoryScores: CategoryScore[] = [];
   metricScores: MetricScore[] = [];
   totalScore: number;
 
@@ -28,9 +36,7 @@ export class ScoreDetail {
     return client.fetch('score')
       .then(response => response.json())
       .then(data => {
-        data.result.metric_scores.forEach(element => {
-          this.metricScores.push(element);
-        });
+        this.categoryScores = data.result.category_scores;
         this.totalScore = data.result.score;
       });
   };
