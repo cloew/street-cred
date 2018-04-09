@@ -1,14 +1,14 @@
 <template>
-<div class="row">
-  <div class="col-md-4 col-sm-12 text-center" id="score-panel">
-    <strong>Your Score: <span value.bind="totalScore">${totalScore}</span></strong>
+<div class="row main-content">
+  <div class="card col-md-4 col-sm-12" id="score-card">
+    <div class="card-body" id="score-body"><strong>Your Score: <span value.bind="totalScore">${totalScore}</span></strong></div>
   </div>
   <div id="category-accordion" class="col-md-8 col-sm-12">
     <div class="card" repeat.for="categoryScore of categoryScores">
         <div class="card-header" id="heading-category${$index}">
           <h5 class="mb-0">
-            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-category${$index}" aria-expanded="false" aria-controls="collapse-category${$index}">
-              ${categoryScore.name} ${categoryScore.score}
+            <button class="btn collapsed" data-toggle="collapse" data-target="#collapse-category${$index}" aria-expanded="false" aria-controls="collapse-category${$index}">
+              ${categoryScore.name} ${categoryScore.score} <span class="toggle-caret">
             </button>
           </h5>
         </div>
@@ -23,8 +23,8 @@
               <div class="card"  repeat.for="metricScore of categoryScore.metric_scores">
                 <div class="card-header" id="heading-metric-${$parent.$index}-${$index}">
                   <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-metric-${$parent.$index}-${$index}" aria-expanded="false" aria-controls="collapse-metric-${$parent.$index}-${$index}">
-                      ${metricScore.name} ${metricScore.score}
+                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapse-metric-${$parent.$index}-${$index}" aria-expanded="false" aria-controls="collapse-metric-${$parent.$index}-${$index}">
+                      ${metricScore.name} ${metricScore.score} <span class="toggle-caret">
                     </button>
                   </h5>
                 </div>

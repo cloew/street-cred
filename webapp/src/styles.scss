@@ -1,0 +1,82 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+$border-color: #006080;
+$big-text-color: #ff9933;
+$main-background: #99eb47;
+$card-background: #72278b;
+
+body {
+  background: $main-background;
+}
+
+.navbar {
+  background-color: $card-background;
+  border-bottom: 2px solid $border-color;
+}
+
+.h1 {
+  color: $big-text-color;
+  font-size: 2em;
+}
+
+.tagline {
+  padding: 10px 12px;
+  margin-bottom: 15;
+  font-size: 1.6em;
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6px;
+}
+
+#score-card {
+  // position: fixed;
+  display: flex;
+  border-radius: 50%;
+  border: 2px solid $border-color;
+  align-items: center;
+  justify-content: center;
+  background: $card-background;
+  height: 6em;
+}
+
+#score-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $big-text-color;
+  font-size: 2em;
+}
+
+.card-header button {
+  color: Blue;
+}
+
+/*Carets*/
+/*right*/
+.card-header .collapsed .toggle-caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-left:   4px solid #444;
+  border-top: 4px solid transparent;
+  border-bottom:  4px solid transparent;
+}
+
+/*Down*/
+.card-header .toggle-caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  margin-right: 2px;
+  vertical-align: middle;
+  border-top:   4px solid #444;
+  border-right: 4px solid transparent;
+  border-left:  4px solid transparent;
+}
