@@ -1,16 +1,21 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
-$border-color: #006080;
-$big-text-color: #ff9933;
-$main-background: #99eb47;
-$card-background: #72278b;
+$border-color: #ef8fef;
+$big-text-color: #f98006;
+$main-background: #282b2c;
+$pattern-fg-no-hash: bbb440;
+$card-background: #d9b6fb;
+$front-color: #bef3be;
 
 body {
-  background: $main-background;
+  //Pattern courtesy of: https://www.heropatterns.com/
+  background-color: $main-background;
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23#{$pattern-fg-no-hash}' fill-opacity='1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  display: flex;
+  align-items: center;
 }
 
 .navbar {
-  background-color: $card-background;
   border-bottom: 2px solid $border-color;
 }
 
@@ -19,13 +24,21 @@ body {
   font-size: 2em;
 }
 
+.main-container {
+  border-radius: 5px;
+  margin-top: 20px;
+  width: 90%;
+  background: $card-background;
+  border: 3px solid $border-color;
+}
+
 .tagline {
   padding: 10px 12px;
   margin-bottom: 15;
-  font-size: 1.6em;
+  font-size: 1.25em;
 }
 
-.main-content {
+.score-content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,7 +52,7 @@ body {
   border: 2px solid $border-color;
   align-items: center;
   justify-content: center;
-  background: $card-background;
+  background: $front-color;
   height: 6em;
 }
 
@@ -53,6 +66,14 @@ body {
 
 .card-header button {
   color: Blue;
+}
+
+.category-main {
+  background: $card-background;
+}
+
+.metric-main {
+  background: $front-color;
 }
 
 /*Carets*/
@@ -79,4 +100,10 @@ body {
   border-top:   4px solid #444;
   border-right: 4px solid transparent;
   border-left:  4px solid transparent;
+}
+
+.card-header {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 0;
 }

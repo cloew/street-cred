@@ -1,15 +1,15 @@
 <template>
-<div class="row main-content">
+<div class="row score-content">
   <div class="card col-md-4 col-sm-12" id="score-card">
     <div class="card-body" id="score-body"><strong>Your Score: <span value.bind="totalScore">${totalScore}</span></strong></div>
   </div>
-  <div id="category-accordion" class="col-md-8 col-sm-12">
-    <div class="card" repeat.for="categoryScore of categoryScores">
+  <div id="category-accordion" class="col-md-8 col-sm-12 category-main">
+    <div class="category" repeat.for="categoryScore of categoryScores">
         <div class="card-header" id="heading-category${$index}">
           <h5 class="mb-0">
-            <button class="btn collapsed" data-toggle="collapse" data-target="#collapse-category${$index}" aria-expanded="false" aria-controls="collapse-category${$index}">
-              ${categoryScore.name} ${categoryScore.score} <span class="toggle-caret">
-            </button>
+            <div class="accordion-handle collapsed" data-toggle="collapse" data-target="#collapse-category${$index}" aria-expanded="false" aria-controls="collapse-category${$index}">
+              ${categoryScore.score}&mdash;${categoryScore.name} <span class="toggle-caret">
+            </div>
           </h5>
         </div>
 
@@ -19,13 +19,13 @@
               ${categoryScore.description}
             </div>
 
-            <div id="metric-accordion-${$parent.$index}">
-              <div class="card"  repeat.for="metricScore of categoryScore.metric_scores">
+            <div id="metric-accordion-${$parent.$index}" class="metric-main">
+              <div class="metric"  repeat.for="metricScore of categoryScore.metric_scores">
                 <div class="card-header" id="heading-metric-${$parent.$index}-${$index}">
                   <h5 class="mb-0">
-                    <button class="btn collapsed" data-toggle="collapse" data-target="#collapse-metric-${$parent.$index}-${$index}" aria-expanded="false" aria-controls="collapse-metric-${$parent.$index}-${$index}">
-                      ${metricScore.name} ${metricScore.score} <span class="toggle-caret">
-                    </button>
+                    <div class="accordion-handle collapsed" data-toggle="collapse" data-target="#collapse-metric-${$parent.$index}-${$index}" aria-expanded="false" aria-controls="collapse-metric-${$parent.$index}-${$index}">
+                    ${metricScore.score}&mdash;${metricScore.name} <span class="toggle-caret">
+                    </div>
                   </h5>
                 </div>
 
