@@ -103,5 +103,7 @@ ENV/
 # PBF
 .pbf-properties
 
-# Aurelia
-scripts
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
